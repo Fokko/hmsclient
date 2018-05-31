@@ -1,6 +1,7 @@
 from setuptools import setup, find_packages
 from codecs import open
 from os import path
+import sys
 
 here = path.abspath(path.dirname(__file__))
 
@@ -10,7 +11,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='hmsclient',
-    version='0.1.1',
+    version='0.1.2',
 
     description='A package interact with the Hive metastore via the Thrift protocol',
     long_description=long_description,
@@ -38,7 +39,7 @@ setup(
     keywords='hive data database thrift metastore',
     packages=find_packages(exclude=['tests', 'docs']),
 
-    install_requires=['thrift', 'click'],
+    install_requires=['click', 'thrift==0.11.0'],
 
     extras_require={
         'dev': ['pytest'],
